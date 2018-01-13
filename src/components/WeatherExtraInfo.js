@@ -1,8 +1,9 @@
 import React from 'react';
 
-const WeatherExtraInfo = () => (
+const WeatherExtraInfo = (props) => (
     <div>
-      Te va a cargar el payaso
+      <span>{props.humidity + "% - "}</span>
+      <span>{props.wind + "wind"}</span>
     </div>
 );
 

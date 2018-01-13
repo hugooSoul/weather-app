@@ -7,7 +7,7 @@ const WeatherData = () => {
     <div>
       <p>WeatherData goes here</p>
       <WeatherTemperature />
-      <WeatherExtraInfo />
+      <WeatherExtraInfo humidity={80} wind={"10m/s"} />
     </div>
   );
 }
