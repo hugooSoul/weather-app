@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Location = () => {
+const Location = (props) => {
   return(
     <div>
-      <h1>Mexico City</h1>
+      <h1>{props.city}</h1>
     </div>
   );
 }

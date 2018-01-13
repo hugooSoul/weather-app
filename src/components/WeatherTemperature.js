@@ -2,7 +2,7 @@ import React from 'react';
 
 const WeatherTemperature = () => (
     <div>
-      Temperature
+      18ºC
     </div>
 );
 

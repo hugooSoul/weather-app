@@ -5,7 +5,7 @@ import WeatherExtraInfo from './WeatherExtraInfo.js';
 const WeatherData = () => {
   return(
     <div>
-      <p>WeatherData</p>
+      <p>WeatherData goes here</p>
       <WeatherTemperature />
       <WeatherExtraInfo />
     </div>

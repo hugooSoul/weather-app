@@ -4,7 +4,7 @@ import WeatherData from './WeatherData.js';
 
 const WeatherLocation = () => (
     <div>
-      <Location />
+      <Location city={"Mexico City"} />
       <WeatherData />
     </div>
 );

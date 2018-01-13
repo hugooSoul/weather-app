@@ -2,7 +2,7 @@ import React from 'react';
 
 const WeatherExtraInfo = () => (
     <div>
-      Extra Info
+      Te va a cargar el payaso
     </div>
 );
 
