@@ -1,17 +1,18 @@
 import React from 'react';
 import WeatherIcons from 'react-weathericons';
+import {NIGHT_CLOUDY, CLOUD, CLOUDY, RAIN, WINDY} from './../constants/weathers'
 
 const stateToIconName = weatherState => {
   switch (weatherState) {
-    case "night-alt-cloudy":
+    case NIGHT_CLOUDY:
       return "night-alt-cloudy";
-    case "cloud":
+    case CLOUD:
       return "cloud";
-    case "cloudy":
+    case CLOUDY:
       return "cloudy";
-    case "rain":
+    case RAIN:
       return "rain";
-    case "windy":
+    case WINDY:
       return "windy";
     default:
       return "day-sunny";
