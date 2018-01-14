@@ -1,7 +1,7 @@
 import React from 'react';
 import WeatherTemperature from './WeatherTemperature.js';
 import WeatherExtraInfo from './WeatherExtraInfo.js';
-import {CLOUD} from './../constants/weathers'
+import {CLOUD} from './../../../constants/weathers'
 
 const WeatherData = () => {
   return(
