@@ -2,19 +2,16 @@ import React, { Component } from 'react';
 import Location from './Location.js';
 import WeatherData from './WeatherData';
 import './styles.css';
-import {NIGHT_CLOUDY, WINDY} from './../../constants/weathers';
+import {NIGHT_CLOUDY} from './../../constants/weathers';
+
+const location = "Guadalajara,mx";
+const api_key = "1774ef563dda9e9b0a54091fe568315e";
+const api_weather = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}`;
 
 const data1 = {
   temperature: 17,
   weatherState: NIGHT_CLOUDY,
   humidity: 41,
-  wind: "5 km/h",
-};
-
-const data2 = {
-  temperature: 6,
-  weatherState: WINDY,
-  humidity: 20,
   wind: "5 km/h",
 };
 
@@ -29,9 +26,12 @@ class WeatherLocation extends Component {
   }
 
   handleUpdateClick = () => {
-    this.setState({
+
+    fetch(api_weather);
+
+    /*this.setState({
       data: data2,
-    });
+    });*/
     console.log("Actualizado");
   }
 
