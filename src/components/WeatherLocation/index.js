@@ -30,19 +30,21 @@ class WeatherLocation extends Component {
 
   handleUpdateClick = () => {
     this.setState({
-      city: "Guadalajara, Jal.",
       data: data2,
     });
     console.log("Actualizado");
   }
 
-  render = () => (
-    <div className="WeatherLocationContent">
-      <Location city={this.state.city} />
-      <WeatherData data={this.state.data} />
-      <button onClick={this.handleUpdateClick} >Update</button>
-    </div>
-  );
+  render = () => {
+    const { city, data } = this.state;
+    return (
+      <div className="WeatherLocationContent">
+        <Location city={city} />
+        <WeatherData data={data} />
+        <button onClick={this.handleUpdateClick} >Update</button>
+      </div>
+    );
+  };
 }
 
 export default WeatherLocation;
