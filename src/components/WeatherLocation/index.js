@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import convert from 'convert-units';
 import Location from './Location.js';
 import WeatherData from './WeatherData';
 import './styles.css';
@@ -29,14 +30,19 @@ class WeatherLocation extends Component {
     return NIGHT_CLOUDY;
   }
 
+  getTemp = kelvin => {
+    return convert(kelvin).from('K').to('C');
+  }
+
   getData = weather_data => {
     const { humidity, temp } = weather_data.main;
     const { speed } = weather_data.wind;
     const weatherState = this.getWeatherState(this.weather);
+    const temperature = this.getTemp(temp);
 
     const data = {
       humidity,
-      temperature: temp,
+      temperature,
       weatherState,
       wind: `${speed} m/s`,
     }
