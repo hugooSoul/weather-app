@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import convert from 'convert-units';
 import Location from './Location.js';
 import WeatherData from './WeatherData';
-import './styles.css';
+import transformWeather from './../../services/transformWeather';
 import {NIGHT_CLOUDY} from './../../constants/weathers';
+import './styles.css';
 
 const location = "Guadalajara,mx";
 const api_key = "1774ef563dda9e9b0a54091fe568315e";
@@ -26,37 +26,13 @@ class WeatherLocation extends Component {
     };
   }
 
-  getWeatherState = weather => {
-    return NIGHT_CLOUDY;
-  }
-
-  getTemp = kelvin => {
-    return convert(kelvin).from('K').to('C');
-  }
-
-  getData = weather_data => {
-    const { humidity, temp } = weather_data.main;
-    const { speed } = weather_data.wind;
-    const weatherState = this.getWeatherState(this.weather);
-    const temperature = this.getTemp(temp);
-
-    const data = {
-      humidity,
-      temperature,
-      weatherState,
-      wind: `${speed} m/s`,
-    }
-
-    return data;
-  }
-
   handleUpdateClick = () => {
 
     fetch(api_weather).then( data => {
       console.log(data);
       return data.json();
     }).then( weather_data => {
-      const data = this.getData(weather_data);
+      const data = transformWeather(weather_data);
       this.setState({
         data
       });
