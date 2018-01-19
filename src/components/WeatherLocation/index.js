@@ -41,6 +41,10 @@ class WeatherLocation extends Component {
     });
   }
 
+  componentWillMount() {
+    this.handleUpdateClick();
+  }
+
   render = () => {
     const { city, data } = this.state;
     return (
