@@ -33,9 +33,10 @@ class WeatherLocation extends Component {
   }
 
   render = () => {
+    const { onWeatherLocationClick } = this.props;
     const { city, data } = this.state;
     return (
-      <div className="WeatherLocationContent">
+      <div className="WeatherLocationContent" onClick={onWeatherLocationClick} >
         <Location city={city} />
         {data ? <WeatherData data={data} /> : <Preloader size='big'/> }
       </div>
@@ -45,6 +46,7 @@ class WeatherLocation extends Component {
 
 WeatherLocation.propTypes = {
   city: PropTypes.string,
+  onWeatherLocationClick: PropTypes.func,
 }
 
 //<button onClick={this.handleUpdateClick} >Update</button>
