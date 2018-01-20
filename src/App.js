@@ -13,22 +13,24 @@ const cities = [
 class App extends Component {
 
   handleSelectedLocation = city => {
-    console.log("handleSelectedLocation");
+
   }
 
   render() {
     return (
-      <Grid fluid>
+      <Grid>
         <Row>
-          <Col md={12}>12 md</Col>
+          <h2>TITULO</h2>
+        </Row>
+        <Row>
+          <Col xs={12} md={6}>
+            <LocationList
+              cities={cities}
+              onSelectedLocation={this.handleSelectedLocation}
+            />
+          </Col>
         </Row>
       </Grid>
-      /*<div className="App">
-        <LocationList
-          cities={cities}
-          onSelectedLocation={this.handleSelectedLocation}
-        />
-      </div>*/
     );
   }
 }
