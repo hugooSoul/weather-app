@@ -4,6 +4,7 @@ import WeatherLocation from './components/WeatherLocation';
 
 class App extends Component {
   render() {
+    console.log("debugger");
     return (
       <div className="App">
         <WeatherLocation />
