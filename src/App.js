@@ -29,6 +29,9 @@ class App extends Component {
               onSelectedLocation={this.handleSelectedLocation}
             />
           </Col>
+          <Col xs={12} md={6}>
+            <div className="detail"></div>
+          </Col>
         </Row>
       </Grid>
     );
