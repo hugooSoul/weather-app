@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import LocationList from './components/LocationList';
 import './App.css';
 
@@ -17,12 +18,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <Grid fluid>
+        <Row>
+          <Col md={12}>12 md</Col>
+        </Row>
+      </Grid>
+      /*<div className="App">
         <LocationList
           cities={cities}
           onSelectedLocation={this.handleSelectedLocation}
         />
-      </div>
+      </div>*/
     );
   }
 }
