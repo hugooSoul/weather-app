@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Preloader } from 'react-materialize';
 import Location from './Location.js';
 import WeatherData from './WeatherData';
 import transformWeather from './../../services/transformWeather';
@@ -38,7 +39,7 @@ class WeatherLocation extends Component {
     return (
       <div className="WeatherLocationContent">
         <Location city={city} />
-        {data ? <WeatherData data={data} /> : 'Loading...' }
+        {data ? <WeatherData data={data} /> : <Preloader size='big'/> }
       </div>
     );
   };
