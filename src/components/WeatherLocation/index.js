@@ -5,9 +5,10 @@ import WeatherData from './WeatherData';
 import transformWeather from './../../services/transformWeather';
 import './styles.css';
 
-const location = "Guadalajara,mx";
+const city = "Guadalajara,mx";
+const url = "http://api.openweathermap.org/data/2.5/weather";
 const api_key = "1774ef563dda9e9b0a54091fe568315e";
-const api_weather = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}`;
+const api_weather = `${url}?q=${city}&appid=${api_key}`;
 
 class WeatherLocation extends Component {
 
