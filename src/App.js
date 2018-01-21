@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Navbar, Card } from 'react-materialize';
 import LocationList from './components/LocationList';
 import './App.css';
 
@@ -20,7 +21,9 @@ class App extends Component {
     return (
       <Grid>
         <Row>
-          <h2>TITULO</h2>
+          <Col xs={12}>
+            <Navbar brand="Weather App" right></Navbar>
+          </Col>
         </Row>
         <Row>
           <Col xs={12} md={6}>
@@ -30,7 +33,9 @@ class App extends Component {
             />
           </Col>
           <Col xs={12} md={6}>
-            <div className="detail"></div>
+            <Card>
+              <div className="detail"></div>
+            </Card>
           </Col>
         </Row>
       </Grid>
