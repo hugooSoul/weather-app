@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Navbar, Card } from 'react-materialize';
 import LocationList from './components/LocationList';
+import ForecastExtended from './components/ForecastExtended';
 import './App.css';
 
 const cities = [
@@ -34,7 +35,9 @@ class App extends Component {
           </Col>
           <Col xs={12} md={6}>
             <Card>
-              <div className="detail"></div>
+              <div className="detail">
+                <ForecastExtended />
+              </div>
             </Card>
           </Col>
         </Row>
