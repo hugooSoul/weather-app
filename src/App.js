@@ -36,7 +36,7 @@ class App extends Component {
           <Col xs={12} md={6}>
             <Card>
               <div className="detail">
-                <ForecastExtended />
+                <ForecastExtended city={'Mexico City,MX'} />
               </div>
             </Card>
           </Col>
