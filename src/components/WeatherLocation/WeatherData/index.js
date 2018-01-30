@@ -18,7 +18,7 @@ WeatherData.propTypes = {
   data: PropTypes.shape({
     temperature: PropTypes.number.isRequired,
     weatherState: PropTypes.string.isRequired,
-    humidity: PropTypes.string.isRequired,
+    humidity: PropTypes.number.isRequired,
     wind: PropTypes.string.isRequired,
   }),
 };
