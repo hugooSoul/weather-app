@@ -43,8 +43,7 @@ class App extends Component {
             <Card>
               <div className="detail">
               {
-                !city ?
-                  <h2>Choose a City</h2> :
+                city &&
                   <ForecastExtended city={city} />
               }
               </div>
