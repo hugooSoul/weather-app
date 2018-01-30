@@ -16,7 +16,7 @@ class App extends Component {
 
   constructor() {
     super();
-    this.state = { city: 'New city' };
+    this.state = { city: null };
   }
 
   handleSelectedLocation = city => {
@@ -42,7 +42,11 @@ class App extends Component {
           <Col xs={12} md={6}>
             <Card>
               <div className="detail">
-                <ForecastExtended city={city} />
+              {
+                !city ?
+                  <h2>Choose a City</h2> :
+                  <ForecastExtended city={city} />
+              }
               </div>
             </Card>
           </Col>
