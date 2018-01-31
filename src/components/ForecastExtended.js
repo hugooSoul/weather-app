@@ -20,11 +20,18 @@ const data = {
   wind: "normal",
 };*/
 
+const url = "http://api.openweathermap.org/data/2.5/forecast";
+const api_key = "1774ef563dda9e9b0a54091fe568315e";
+
 class ForecastExtended extends Component {
 
   constructor() {
     super();
     this.state = { forecastData: null }
+  }
+
+  componentDidMount() {
+    
   }
 
   renderForecastItemDays() {
