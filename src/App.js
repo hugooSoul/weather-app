@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Navbar, Card } from 'react-materialize';
-import { createStore } from 'redux';
 import LocationList from './components/LocationList';
 import ForecastExtended from './components/ForecastExtended';
 import { setCity } from './actions';
+import { store } from './store';
 import './App.css';
 
 const cities = [
@@ -13,8 +13,6 @@ const cities = [
   "Toronto,CA",
   "Italia,IT"
 ];
-
-const store = createStore( () => {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() );
 
 class App extends Component {
 
