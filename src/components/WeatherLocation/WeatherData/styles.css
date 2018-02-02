@@ -7,7 +7,6 @@
 }
 
 .WeatherTemperatureContent {
-  /*background: #E53A40;*/
   width: 60%;
   display: inline-block;
   color: #011638;
@@ -25,6 +24,7 @@
 }
 
 .wicon {
+  font-size: 4em;
 }
 
 .WeatherExtraInfoContent {
@@ -39,4 +39,22 @@
   display: block;
   font-size: 20px;
   font-weight: 700;
+}
+
+@media(max-width: 48em) {
+  .extraInfoText {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .temperature {
+    font-size: 20px;
+    padding-left: 5px;
+  }
+  .wicon {
+    font-size: 3em;
+  }
+}
+
+@media(max-width: 64em) {
+
 }
