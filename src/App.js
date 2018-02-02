@@ -4,6 +4,7 @@ import { Navbar, Card } from 'react-materialize';
 import { createStore } from 'redux';
 import LocationList from './components/LocationList';
 import ForecastExtended from './components/ForecastExtended';
+import { setCity } from './actions';
 import './App.css';
 
 const cities = [
@@ -14,8 +15,6 @@ const cities = [
 ];
 
 const store = createStore( () => {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() );
-
-const setCity = value => ({ type: 'setCity', value });
 
 class App extends Component {
 
