@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Navbar, Card } from 'react-materialize';
 import LocationList from './components/LocationList';
 import ForecastExtended from './components/ForecastExtended';
 import { setCity } from './actions';
-import { store } from './store';
 import './App.css';
 
 const cities = [
@@ -24,7 +24,7 @@ class App extends Component {
   handleSelectedLocation = city => {
     this.setState({ city });
 
-    store.dispatch( setCity(city) );
+    this.props.setCity(city);
   }
 
   render() {
@@ -59,4 +59,11 @@ class App extends Component {
   }
 }
 
-export default App;
+//export default App;
+
+const mapDispatchToPropsActions= dispatch => ({
+  setCity: value => dispatch(setCity(value))
+});
+const AppConnected = connect(null, mapDispatchToPropsActions)(App);
+
+export default AppConnected;
