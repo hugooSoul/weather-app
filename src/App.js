@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Navbar, Card } from 'react-materialize';
+import PropTypes from 'prop-types';
 import LocationList from './components/LocationList';
 import ForecastExtended from './components/ForecastExtended';
 import { setCity } from './actions';
@@ -59,11 +60,13 @@ class App extends Component {
   }
 }
 
+App.propTypes = {
+  setCity: PropTypes.func.isRequired,
+}
 //export default App;
 
-const mapDispatchToPropsActions= dispatch => ({
+const mapDispatchToProps= dispatch => ({
   setCity: value => dispatch(setCity(value))
 });
-const AppConnected = connect(null, mapDispatchToPropsActions)(App);
 
-export default AppConnected;
+export default connect(null, mapDispatchToProps)(App);
