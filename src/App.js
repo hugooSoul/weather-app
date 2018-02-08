@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Navbar, Card } from 'react-materialize';
-import PropTypes from 'prop-types';
-import LocationList from './components/LocationList';
+import LocationListContainer from './containers/LocationListContainer';
 import ForecastExtended from './components/ForecastExtended';
-import { setCity } from './actions';
 import './App.css';
 
 const cities = [
@@ -22,12 +19,6 @@ class App extends Component {
     this.state = { city: null };
   }
 
-  handleSelectedLocation = city => {
-    this.setState({ city });
-
-    this.props.setCity(city);
-  }
-
   render() {
     const { city } = this.state;
     return (
@@ -39,10 +30,8 @@ class App extends Component {
         </Row>
         <Row>
           <Col xs={12} md={6}>
-            <LocationList
-              cities={cities}
-              onSelectedLocation={this.handleSelectedLocation}
-            />
+            <LocationListContainer
+              cities={cities} />
           </Col>
           <Col xs={12} md={6}>
             <Card>
@@ -59,14 +48,6 @@ class App extends Component {
     );
   }
 }
-
-App.propTypes = {
-  setCity: PropTypes.func.isRequired,
-}
 //export default App;
 
-const mapDispatchToProps= dispatch => ({
-  setCity: value => dispatch(setCity(value))
-});
-
-export default connect(null, mapDispatchToProps)(App);
+export default App;
