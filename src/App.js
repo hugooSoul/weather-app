@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Navbar, Card } from 'react-materialize';
 import LocationListContainer from './containers/LocationListContainer';
-import ForecastExtended from './components/ForecastExtended';
+import ForecastExtendedContainer from './containers/ForecastExtendedContainer';
 import './App.css';
 
 const cities = [
@@ -14,13 +14,7 @@ const cities = [
 
 class App extends Component {
 
-  constructor() {
-    super();
-    this.state = { city: null };
-  }
-
   render() {
-    const { city } = this.state;
     return (
       <Grid>
         <Row>
@@ -36,10 +30,7 @@ class App extends Component {
           <Col xs={12} md={6}>
             <Card>
               <div className="detail">
-              {
-                city &&
-                  <ForecastExtended city={city} />
-              }
+                <ForecastExtendedContainer />
               </div>
             </Card>
           </Col>
