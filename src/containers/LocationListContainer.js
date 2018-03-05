@@ -27,13 +27,14 @@ class LocationListContainer extends Component {
 }
 
 LocationListContainer.propTypes = {
-  setCity: PropTypes.func.isRequired,
+  setSelectedCity: PropTypes.func.isRequired,
+  setWeather: PropTypes.func.isRequired,
   cities: PropTypes.array.isRequired,
   citiesWeather: PropTypes.array,
 }
 
 const mapDispatchToProps = dispatch => ({
-  setCity: value => dispatch(setSelectedCity(value)),
+  setSelectedCity: value => dispatch(setSelectedCity(value)),
   setWeather: cities => dispatch(setWeather(cities))
 });
 
