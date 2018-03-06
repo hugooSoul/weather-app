@@ -16,7 +16,7 @@ class LocationListContainer extends Component {
   }
 
   handleSelectedLocation = city => {
-    this.props.setSelectedCity(city); 
+    this.props.setSelectedCity(city);
   }
 
   render(){
@@ -31,7 +31,6 @@ class LocationListContainer extends Component {
 }
 
 LocationListContainer.propTypes = {
-  //setCity: PropTypes.func.isRequired,
   setSelectedCity: PropTypes.func.isRequired,
   setWeather: PropTypes.func.isRequired,
   cities: PropTypes.array.isRequired,
@@ -41,7 +40,6 @@ LocationListContainer.propTypes = {
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 /*const mapDispatchToProps = dispatch => ({
-  setCity: value => dispatch(setSelectedCity(value)),
   setSelectedCity: value => dispatch(setSelectedCity(value)),
   setWeather: cities => dispatch(setWeather(cities))
 });*/
